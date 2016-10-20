@@ -75,6 +75,13 @@
             "controlType": "fileContents",
             "defaultValue": "",
             "allowEmpty": true
+        },
+        "chefClientVersion": {
+          "type": "string",
+          "displayName": "Chef client version to install.",
+          "description": "For example, 12.4.1-1.",
+          "defaultValue": "",
+          "allowEmpty": true
         }
     },
     "runAzureVMExtension": {
@@ -91,6 +98,7 @@
                 "environment": "[parameters('chefEnvironment')]",
                 "secret": "[parameters('databagSecret')]"
             },
+            "bootstrap_version": "[parameters('chefClientVersion')]",
             "runlist": "[parameters('runlist')]",
             "client_rb": "[parameters('clientRb')]"
         },
